@@ -1,0 +1,280 @@
+/* =========================================================
+   users.css
+   Gestion des utilisateurs — design clean, aéré, fluide
+   ========================================================= */
+
+:root {
+  --color-bg: #f4f6fa;
+  --color-surface: #ffffff;
+  --color-border: #e4e8f0;
+  --color-text: #1f2937;
+  --color-text-muted: #6b7280;
+  --color-primary: #2563eb;
+  --color-primary-hover: #1d4ed8;
+  --color-primary-light: #eff4ff;
+  --color-success: #16a34a;
+  --color-success-bg: #ecfdf3;
+  --color-warning: #d97706;
+  --color-warning-bg: #fff7ed;
+  --color-error: #dc2626;
+  --color-error-bg: #fef2f2;
+  --color-neutral-bg: #f3f4f6;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --shadow-sm: 0 1px 2px rgba(16, 24, 40, 0.06);
+  --shadow-md: 0 4px 12px rgba(16, 24, 40, 0.08);
+  --transition: all 0.2s ease;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.users-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 24px 64px;
+  font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+  color: var(--color-text);
+  background: var(--color-bg);
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.users-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.users-header h2 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.btn-add {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--color-primary);
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.btn-add:hover {
+  background: var(--color-primary-hover);
+  box-shadow: var(--shadow-md);
+}
+
+/* =========================================================
+   FILTRES
+   ========================================================= */
+
+.users-filters {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 16px 20px;
+  margin-bottom: 20px;
+  box-shadow: var(--shadow-sm);
+}
+
+.users-filters input[type="text"] {
+  flex: 1;
+  min-width: 220px;
+  padding: 10px 14px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  font-family: inherit;
+  color: var(--color-text);
+  background: var(--color-bg);
+  transition: var(--transition);
+}
+
+.users-filters select {
+  padding: 10px 14px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  font-family: inherit;
+  color: var(--color-text);
+  background: var(--color-bg);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.users-filters input[type="text"]:focus,
+.users-filters select:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px var(--color-primary-light);
+  background: var(--color-surface);
+}
+
+/* =========================================================
+   TABLE
+   ========================================================= */
+
+.users-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  font-size: 14px;
+}
+
+.users-table thead th {
+  text-align: left;
+  background: #fafbfd;
+  color: var(--color-text-muted);
+  font-weight: 600;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.users-table tbody td {
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--color-border);
+  vertical-align: middle;
+  color: var(--color-text);
+}
+
+.users-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.users-table tbody tr {
+  transition: var(--transition);
+}
+
+.users-table tbody tr:hover {
+  background: #fafbfd;
+}
+
+/* =========================================================
+   STATUTS
+   ========================================================= */
+
+.active,
+.inactive {
+  display: inline-block;
+  padding: 5px 14px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.active {
+  background: var(--color-success-bg);
+  color: var(--color-success);
+}
+
+.inactive {
+  background: var(--color-error-bg);
+  color: var(--color-error);
+}
+
+/* =========================================================
+   ACTIONS
+   ========================================================= */
+
+.users-table td:last-child {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.users-table button {
+  font-family: inherit;
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 7px 14px;
+  font-size: 12.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  white-space: nowrap;
+}
+
+.btn-details {
+  background: var(--color-neutral-bg);
+  color: var(--color-text);
+}
+
+.btn-details:hover {
+  background: #e5e7eb;
+}
+
+.btn-edit {
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+}
+
+.btn-edit:hover {
+  background: #dbe7ff;
+}
+
+.btn-status {
+  background: var(--color-warning-bg);
+  color: var(--color-warning);
+}
+
+.btn-status:hover {
+  background: #ffedd5;
+}
+
+.btn-delete {
+  background: var(--color-error-bg);
+  color: var(--color-error);
+}
+
+.btn-delete:hover {
+  background: #fee2e2;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 768px) {
+  .users-container {
+    padding: 20px 16px 48px;
+  }
+
+  .users-filters {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .users-table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+}

@@ -1,0 +1,165 @@
+/* =========================================================
+   Sidebar.css
+   Barre latérale admin — design clean, sombre, fluide
+   ========================================================= */
+
+:root {
+  --sidebar-width: 240px;
+  --sidebar-bg: #111827;
+  --sidebar-bg-soft: #1a2333;
+  --sidebar-border: rgba(255, 255, 255, 0.08);
+  --sidebar-text: #cbd5e1;
+  --sidebar-text-muted: #8894a8;
+  --sidebar-text-active: #ffffff;
+  --sidebar-accent: #2563eb;
+  --sidebar-accent-light: rgba(37, 99, 235, 0.16);
+  --sidebar-danger: #ef4444;
+  --sidebar-danger-bg: rgba(239, 68, 68, 0.12);
+  --radius-md: 10px;
+  --transition: all 0.2s ease;
+}
+
+.sidebar {
+  width: var(--sidebar-width);
+  min-height: 100vh;
+  background: var(--sidebar-bg);
+  border-right: 1px solid var(--sidebar-border);
+  font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar .cont {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 24px 16px;
+}
+
+/* =========================================================
+   LOGO / TITRE
+   ========================================================= */
+
+.sidebar .logoC {
+  display: block;
+  margin: 0 auto 12px;
+  border-radius: 8px;
+  object-fit: contain;
+}
+
+.sidebar h2 {
+  margin: 0 0 28px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--sidebar-text-active);
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--sidebar-border);
+}
+
+/* =========================================================
+   LIENS DE NAVIGATION
+   ========================================================= */
+
+.sidebar .cont > a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  margin-bottom: 6px;
+  border-radius: var(--radius-md);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--sidebar-text);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.sidebar .cont > a:hover {
+  background: var(--sidebar-bg-soft);
+  color: var(--sidebar-text-active);
+}
+
+.sidebar .cont > a:active,
+.sidebar .cont > a.active {
+  background: var(--sidebar-accent-light);
+  color: var(--sidebar-accent);
+  font-weight: 600;
+}
+
+/* =========================================================
+   BOUTON LOGOUT
+   ========================================================= */
+
+.sidebar .cont > button {
+  margin-top: auto;
+  padding: 0;
+  background: transparent;
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.sidebar .cont > button a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  border-radius: var(--radius-md);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--sidebar-danger);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.sidebar .cont > button:hover a {
+  background: var(--sidebar-danger-bg);
+  color: var(--sidebar-danger);
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 768px) {
+  :root {
+    --sidebar-width: 100%;
+  }
+
+  .sidebar {
+    min-height: auto;
+    border-right: none;
+    border-bottom: 1px solid var(--sidebar-border);
+  }
+
+  .sidebar .cont {
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 12px 16px;
+  }
+
+  .sidebar .logoC {
+    margin: 0;
+    width: 40px !important;
+  }
+
+  .sidebar h2 {
+    margin: 0 16px 0 8px;
+    padding: 0;
+    border-bottom: none;
+  }
+
+  .sidebar .cont > a {
+    margin-bottom: 0;
+  }
+
+  .sidebar .cont > button {
+    margin-top: 0;
+    margin-left: auto;
+  }
+}

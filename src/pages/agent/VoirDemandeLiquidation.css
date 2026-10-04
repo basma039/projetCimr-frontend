@@ -1,0 +1,442 @@
+/* =========================================================
+   VoirDemandeLiquidation.css
+   Design clean, aéré, cohérent avec ValidationDemande.css
+   ========================================================= */
+
+:root {
+  --color-bg: #f4f6fa;
+  --color-surface: #ffffff;
+  --color-border: #e4e8f0;
+  --color-text: #1f2937;
+  --color-text-muted: #6b7280;
+  --color-primary: #2563eb;
+  --color-primary-light: #eff4ff;
+  --color-success: #16a34a;
+  --color-success-bg: #ecfdf3;
+  --color-success-border: #b7ebc6;
+  --color-error: #dc2626;
+  --color-error-bg: #fef2f2;
+  --color-warning: #d97706;
+  --color-warning-bg: #fff7ed;
+  --color-neutral-bg: #f3f4f6;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --shadow-sm: 0 1px 2px rgba(16, 24, 40, 0.06);
+  --shadow-md: 0 4px 12px rgba(16, 24, 40, 0.08);
+  --transition: all 0.2s ease;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   CONTAINER GÉNÉRAL
+   ========================================================= */
+
+.voir-demande-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 32px 24px 64px;
+  font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+  color: var(--color-text);
+  background: var(--color-bg);
+}
+
+.voir-loading,
+.voir-error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  font-size: 15px;
+  color: var(--color-text-muted);
+}
+
+.voir-error {
+  color: var(--color-error);
+  font-weight: 500;
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.voir-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 24px 28px;
+  margin-bottom: 24px;
+  box-shadow: var(--shadow-sm);
+}
+
+.voir-header h1 {
+  margin: 0 0 4px;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.voir-header p {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: 14px;
+}
+
+.voir-status {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+.voir-status span {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-text-muted);
+}
+
+.voir-status strong {
+  font-size: 14px;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+}
+
+/* Variantes de statut, si utilisées par le backend */
+.voir-status strong.status-EN_CONTROLE {
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+}
+
+.voir-status strong.status-EN_ATTENTE_PIECES {
+  background: var(--color-warning-bg);
+  color: var(--color-warning);
+}
+
+.voir-status strong.status-ANOMALIE {
+  background: var(--color-error-bg);
+  color: var(--color-error);
+}
+
+/* =========================================================
+   SECTIONS
+   ========================================================= */
+
+.voir-section {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 24px 28px;
+  margin-bottom: 20px;
+  box-shadow: var(--shadow-sm);
+}
+
+.voir-section-title {
+  margin-bottom: 18px;
+}
+
+.voir-section-title h2 {
+  margin: 0 0 4px;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.voir-section-title p {
+  margin: 0;
+  font-size: 13px;
+  color: var(--color-text-muted);
+}
+
+/* =========================================================
+   INFO GRID
+   ========================================================= */
+
+.voir-info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px 24px;
+}
+
+.voir-info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.voir-info-item label {
+  font-size: 12px;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.voir-info-item span {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+/* =========================================================
+   TABLES
+   ========================================================= */
+
+.voir-table-wrapper {
+  overflow-x: auto;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+}
+
+.voir-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.voir-table thead th {
+  text-align: left;
+  background: #fafbfd;
+  color: var(--color-text-muted);
+  font-weight: 600;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.voir-table tbody td {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--color-border);
+  vertical-align: middle;
+}
+
+.voir-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.voir-table tbody tr:hover {
+  background: #fafbfd;
+}
+
+/* Badge statut de pièce (lecture seule) */
+
+.piece-badge {
+  display: inline-block;
+  padding: 5px 14px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  background: var(--color-neutral-bg);
+  color: #4b5563;
+}
+
+.piece-badge.piece-NON_RECU {
+  background: var(--color-neutral-bg);
+  color: #4b5563;
+}
+
+.piece-badge.piece-RECU_CONFORME {
+  background: var(--color-success-bg);
+  color: var(--color-success);
+}
+
+.piece-badge.piece-RECU_NON_CONFORME {
+  background: var(--color-error-bg);
+  color: var(--color-error);
+}
+
+.piece-badge.piece-INUTILE {
+  background: var(--color-neutral-bg);
+  color: #9ca3af;
+  text-decoration: line-through;
+}
+
+.piece-badge.piece-AUTRE {
+  background: var(--color-warning-bg);
+  color: var(--color-warning);
+}
+
+/* =========================================================
+   ÉTATS VIDES
+   ========================================================= */
+
+.voir-empty {
+  padding: 28px;
+  text-align: center;
+  color: var(--color-text-muted);
+  font-size: 14px;
+  background: #fafbfd;
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.voir-empty.success-empty {
+  color: var(--color-success);
+  background: var(--color-success-bg);
+  border: 1px dashed var(--color-success-border);
+}
+
+/* =========================================================
+   ANOMALIES
+   ========================================================= */
+
+.voir-anomalies {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.voir-anomalie {
+  padding: 14px 18px;
+  border: 1px solid var(--color-border);
+  border-left: 3px solid var(--color-error);
+  border-radius: var(--radius-sm);
+  background: var(--color-error-bg);
+}
+
+.anomalie-title strong {
+  display: block;
+  font-size: 14px;
+  color: var(--color-text);
+  margin-bottom: 4px;
+}
+
+.voir-anomalie p {
+  margin: 0 0 6px;
+  font-size: 13px;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+.voir-anomalie small {
+  font-size: 12px;
+  color: var(--color-text-muted);
+  font-style: italic;
+}
+
+/* =========================================================
+   AFFILIATIONS / COTISATIONS
+   ========================================================= */
+
+.voir-affiliations {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.voir-affiliation {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 18px 20px;
+  background: #fbfcfe;
+}
+
+.affiliation-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.affiliation-header h3 {
+  margin: 0 0 2px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.affiliation-header p {
+  margin: 0;
+  font-size: 13px;
+  color: var(--color-text-muted);
+}
+
+.regime-badge {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-primary);
+  background: var(--color-primary-light);
+  padding: 5px 12px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.voir-contributions {
+  margin-top: 18px;
+}
+
+.voir-contributions h4 {
+  margin: 0 0 10px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+/* =========================================================
+   ACTIONS
+   ========================================================= */
+
+.voir-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 12px;
+}
+
+.voir-button-retour {
+  font-family: inherit;
+  cursor: pointer;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-text);
+  padding: 11px 24px;
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.voir-button-retour:hover {
+  background: var(--color-neutral-bg);
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 640px) {
+  .voir-demande-container {
+    padding: 20px 16px 48px;
+  }
+
+  .voir-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .voir-status {
+    align-items: flex-start;
+  }
+
+  .voir-actions {
+    justify-content: stretch;
+  }
+
+  .voir-button-retour {
+    width: 100%;
+  }
+}

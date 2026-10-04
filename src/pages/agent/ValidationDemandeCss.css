@@ -1,0 +1,628 @@
+/* =====================================================
+   ValidationDemandeCss.css
+   Design system aligné sur ControleDemande.css :
+   cartes blanches, ombre légère + hover, badges pilule,
+   boutons avec effet de levée au survol.
+===================================================== */
+
+:root {
+  --color-primary: #2563eb;
+  --color-primary-dark: #1d4ed8;
+  --color-primary-light: #eff6ff;
+
+  --color-success: #16a34a;
+  --color-success-light: #f0fdf4;
+  --color-error: #dc2626;
+  --color-error-light: #fef2f2;
+  --color-warning: #d97706;
+  --color-warning-light: #fffbeb;
+
+  --color-text: #1e293b;
+  --color-text-muted: #64748b;
+  --color-border: #e2e8f0;
+  --color-bg: #f8fafc;
+  --color-surface: #ffffff;
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+
+  --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.06);
+  --shadow-md: 0 4px 12px rgba(15, 23, 42, 0.08);
+
+  --transition: 0.2s ease;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* =====================================================
+   CONTAINER GÉNÉRAL
+===================================================== */
+
+.validation-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 100px 50px;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: var(--color-text);
+  background: var(--color-bg);
+}
+
+/* =====================================================
+   ÉTATS : chargement / erreur
+===================================================== */
+
+.validation-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  color: var(--color-text-muted);
+  font-size: 15px;
+}
+
+.validation-error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  color: var(--color-error);
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.empty-state {
+  text-align: center;
+  color: var(--color-text-muted);
+  font-size: 14px;
+  padding: 24px;
+  background: var(--color-bg);
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+/* =====================================================
+   EN-TÊTE DE PAGE
+===================================================== */
+
+.validation-header   {
+  display: flex;
+  flex-direction: row;
+  padding: 20px;
+  width: 100%;
+  flex-wrap: nowrap;
+  align-items:center;
+  justify-content:space-around;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+/* Bloc de gauche (titre + n° de demande) */
+.validation-header > div:first-child {
+  min-width: 0;
+  flex: 1 1 auto;
+}
+
+.validation-header h1 {
+  margin: 0 0 4px;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.validation-header p {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: 14px;
+}
+
+.validation-status {
+  flex-shrink: 0;
+  flex-grow: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+.validation-status span {
+  font-size: 12px;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.validation-status strong {
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: var(--color-primary-light);
+  color: var(--color-primary-dark);
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* =====================================================
+   MESSAGES (succès / erreur)
+===================================================== */
+
+.validation-message {
+  border-radius: var(--radius-sm);
+  padding: 14px 18px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.validation-message.error {
+  background: var(--color-error-light);
+  color: var(--color-error);
+  border: 1px solid #fecaca;
+}
+
+.validation-message.success {
+  background: var(--color-success-light);
+  color: var(--color-success);
+  border: 1px solid #bbf7d0;
+}
+
+/* =====================================================
+   SECTIONS
+===================================================== */
+
+.validation-section {
+  display: block;
+  width: 100%;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  margin-bottom: 20px;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow var(--transition);
+}
+
+.validation-section:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.section-title {
+  margin-bottom: 20px;
+}
+
+.section-title h2 {
+  margin: 0 0 4px;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.section-title p {
+  margin: 0;
+  font-size: 13.5px;
+  color: var(--color-text-muted);
+}
+
+/* =====================================================
+   GRILLE D'INFORMATIONS (affilié / affiliation)
+===================================================== */
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 16px;
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 12px 14px;
+  background: var(--color-bg);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+}
+
+.info-item label {
+  font-size: 12px;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.info-item span {
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+/* =====================================================
+   TABLEAUX (pièces / contributions)
+===================================================== */
+
+.table-wrapper {
+  overflow-x: auto;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+}
+
+.validation-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13.5px;
+}
+
+.validation-table thead th {
+  background: var(--color-bg);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  font-size: 11.5px;
+  letter-spacing: 0.03em;
+  font-weight: 600;
+  text-align: left;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--color-border);
+  white-space: nowrap;
+}
+
+.validation-table tbody td {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--color-border);
+  color: var(--color-text);
+}
+
+.validation-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.validation-table tbody tr {
+  transition: background var(--transition);
+}
+
+.validation-table tbody tr:hover {
+  background: var(--color-bg);
+}
+
+/* Badge de statut de pièce (select stylé en pilule) */
+
+.piece-status {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding: 6px 30px 6px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--color-border);
+  font-size: 12.5px;
+  font-weight: 600;
+  cursor: pointer;
+  background-color: var(--color-bg);
+  color: var(--color-text-muted);
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'><path d='M1 1l4 4 4-4' stroke='%2364748b' stroke-width='1.5' fill='none' fill-rule='evenodd'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  transition: var(--transition);
+}
+
+.piece-status:hover {
+  border-color: var(--color-primary);
+}
+
+.piece-status:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px var(--color-primary-light);
+}
+
+.piece-status.NON_RECU {
+  background-color: var(--color-bg);
+  color: var(--color-text-muted);
+}
+
+.piece-status.RECU_CONFORME {
+  background-color: var(--color-success-light);
+  color: var(--color-success);
+}
+
+.piece-status.RECU_NON_CONFORME {
+  background-color: var(--color-error-light);
+  color: var(--color-error);
+}
+
+.piece-status.INUTILE {
+  background-color: var(--color-bg);
+  color: #94a3b8;
+  text-decoration: line-through;
+}
+
+.piece-status.AUTRE {
+  background-color: var(--color-warning-light);
+  color: var(--color-warning);
+}
+
+/* =====================================================
+   ANOMALIES
+===================================================== */
+
+.anomalies-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.anomalie-card {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 18px;
+  border: 1px solid var(--color-border);
+  border-left: 3px solid var(--color-warning);
+  border-radius: var(--radius-sm);
+  background: var(--color-warning-light);
+}
+
+.anomalie-card strong {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.anomalie-card p {
+  margin: 0;
+  font-size: 13px;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+.anomalie-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  padding-top: 4px;
+}
+
+.anomalie-form .form-group:nth-child(2) {
+  grid-column: 1 / -1;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-text-muted);
+}
+
+.form-group input,
+.form-group textarea {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 10px 12px;
+  font-size: 14px;
+  font-family: inherit;
+  color: var(--color-text);
+  background: var(--color-surface);
+  transition: var(--transition);
+  resize: vertical;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px var(--color-primary-light);
+}
+
+/* =====================================================
+   AFFILIATIONS / COTISATIONS
+===================================================== */
+
+.affiliations {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.affiliation-card {
+  display: block;
+  width: 100%;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 18px 20px;
+  background: var(--color-bg);
+}
+
+.affiliation-header {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.affiliation-header h3 {
+  margin: 0 0 2px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.affiliation-header p {
+  margin: 0;
+  font-size: 13px;
+  color: var(--color-text-muted);
+}
+
+/* Badge type de régime, façon "regime-badge" */
+.affiliation-header strong {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-primary-dark);
+  background: var(--color-primary-light);
+  padding: 4px 12px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.contributions {
+  margin-top: 18px;
+}
+
+.contributions h4 {
+  margin: 0 0 10px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+/* =====================================================
+   BOUTONS
+===================================================== */
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.button-primary {
+  padding: 12px 26px;
+  border-radius: var(--radius-sm);
+  background: var(--color-success);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  transition: background var(--transition), transform var(--transition);
+}
+
+.button-primary:hover:not(:disabled) {
+  background: #15803d;
+  transform: translateY(-1px);
+}
+
+.button-cancel {
+  padding: 12px 26px;
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border) !important;
+  color: var(--color-text-muted);
+  font-size: 14px;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.button-cancel:hover:not(:disabled) {
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+.button-secondary {
+  align-self: flex-start;
+  margin-top: 4px;
+  padding: 10px 20px;
+  border-radius: var(--radius-sm);
+  background: var(--color-primary-light);
+  color: var(--color-primary-dark);
+  font-size: 13px;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.button-secondary:hover {
+  background: #dbeafe;
+}
+
+.button-delete {
+  background: transparent;
+  color: var(--color-error);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 10px;
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
+  transition: var(--transition);
+}
+
+.button-delete:hover {
+  background: var(--color-error-light);
+}
+
+/* =====================================================
+   ACTIONS FINALES
+   -> Retour / Valider : même largeur, effet de levée au hover
+===================================================== */
+
+.validation-actions {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content:center;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+ .validation-actions button {
+  flex: 1 1 0;
+  width:100% !important;
+  padding: 12px 0;
+  text-align: center;
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 640px) {
+  .validation-container {
+    padding: 20px 14px 48px;
+  }
+
+  .validation-header {
+    flex-direction: column;
+  }
+
+  .validation-status {
+    align-items: flex-start;
+  }
+
+  .anomalie-form {
+    grid-template-columns: 1fr;
+  }
+
+  .anomalie-form .form-group:nth-child(2) {
+    grid-column: 1;
+  }
+
+  .affiliation-header {
+    flex-direction: column;
+  }
+
+  .validation-actions {
+    flex-direction: column-reverse;
+  }
+
+  .validation-actions button {
+    width: 100%;
+    max-width: none;
+  }
+}

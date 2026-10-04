@@ -1,0 +1,203 @@
+/* =====================================================
+   Login.css
+   Page de connexion CIMR — minimaliste, épurée, split-screen
+   Peu de couleurs, beaucoup d'espace blanc.
+===================================================== */
+
+:root {
+  --color-bg: #ffffff;
+  --color-panel: #A8BBA3;
+  --color-text: #111827;
+  --color-muted: #9aa1ac;
+  --color-border: #e5e7eb;
+  --color-accent: #97A87A;
+  --color-error: #b91c1c;
+  --color-error-bg: #fef2f2;
+
+  --transition: 0.2s ease;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+/* =====================================================
+   PAGE — split screen
+   ::before = panneau gauche (bloc de couleur sobre)
+   .login-card = panneau droit (formulaire)
+===================================================== */
+
+.login-page {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  background: var(--color-bg);
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.login-page::before {
+  content: "";
+  flex: 1 1 48%;
+  min-height: 100vh;
+  background: var(--color-panel);
+  background-image: repeating-linear-gradient(
+    115deg,
+    rgba(255, 255, 255, 0.035) 0px,
+    rgba(255, 255, 255, 0.035) 1px,
+    transparent 1px,
+    transparent 64px
+  );
+}
+
+/* =====================================================
+   PANNEAU FORMULAIRE (droite)
+===================================================== */
+
+.login-card {
+  flex: 1 1 52%;
+  min-width: 380px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 64px 96px;
+  background: var(--color-bg);
+  animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.login-logo {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  margin-bottom: 40px;
+}
+
+.login-card h2 {
+  margin: 0 0 40px;
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--color-text);
+}
+
+/* =====================================================
+   FORMULAIRE
+===================================================== */
+
+.login-card form {
+  width: 100%;
+  max-width: 340px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.form-group {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--color-muted);
+  letter-spacing: 0.02em;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 8px 2px 10px;
+  font-size: 15px;
+  font-family: inherit;
+  color: var(--color-text);
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--color-border);
+  border-radius: 0;
+  transition: border-color var(--transition);
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: var(--color-accent);
+}
+
+/* =====================================================
+   MESSAGE D'ERREUR
+===================================================== */
+
+.error {
+  width: 100%;
+  margin: 0;
+  padding: 10px 12px;
+  background: var(--color-error-bg);
+  color: var(--color-error);
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/* =====================================================
+   BOUTON
+===================================================== */
+
+.login-card form button {
+  margin-top: 8px;
+  width: 100%;
+  padding: 13px 20px;
+  font-size: 14.5px;
+  font-weight: 600;
+  font-family: inherit;
+  color: #fff;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  background: rgb(22, 112, 66);
+  transition: background var(--transition), transform var(--transition);
+}
+
+.login-card form button:hover {
+  background: #334e41d0;
+}
+
+.login-card form button:active {
+  transform: scale(0.99);
+}
+
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 900px) {
+  .login-page::before {
+    display: none;
+  }
+
+  .login-card {
+    align-items: center;
+    text-align: center;
+    padding: 48px 32px;
+    min-width: 0;
+  }
+
+  .login-card form {
+    max-width: 100%;
+  }
+
+  .form-group {
+    text-align: left;
+  }
+}

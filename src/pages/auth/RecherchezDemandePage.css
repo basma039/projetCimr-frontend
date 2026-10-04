@@ -1,0 +1,228 @@
+/* RecherchezDemandePage.css
+   Reprend le thème vert/jaune déjà utilisé sur DemandeLiquidationForm / SaisieDemandePage
+   --primary : #467235   --accent : #FFF78D
+*/
+
+.rd-page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 32px 24px 64px;
+  font-family: "Segoe UI", Roboto, -apple-system, sans-serif;
+  color: #1f2a1a;
+}
+
+.rd-page-header h1 {
+  margin: 0 0 4px;
+  font-size: 1.6rem;
+  color: #467235;
+}
+
+.rd-page-header p {
+  margin: 0 0 24px;
+  color: #5b6b57;
+  font-size: 0.95rem;
+}
+
+/* Barre de recherche */
+.rd-search-bar {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.rd-search-input {
+  flex: 1;
+  padding: 12px 14px;
+  border: 1px solid #cfe0c8;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.15s ease;
+}
+
+.rd-search-input:focus {
+  border-color: #467235;
+  box-shadow: 0 0 0 3px rgba(70, 114, 53, 0.15);
+}
+
+.rd-search-button {
+  padding: 12px 22px;
+  background: #467235;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease;
+  white-space: nowrap;
+}
+
+.rd-search-button:hover:not(:disabled) {
+  background: #395c2b;
+}
+
+.rd-search-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Alertes / états */
+.rd-alert {
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-size: 0.92rem;
+}
+
+.rd-alert-error {
+  background: #fdecec;
+  color: #a33636;
+  border: 1px solid #f3c8c8;
+}
+
+.rd-empty-state {
+  padding: 40px 0;
+  text-align: center;
+  color: #7d8a77;
+  font-style: italic;
+}
+
+/* Meta du dossier */
+.rd-dossier-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  background: #FFF78D;
+  border-radius: 10px;
+  padding: 16px 20px;
+  margin-bottom: 24px;
+}
+
+/* Sections */
+.rd-section {
+  background: #fff;
+  border: 1px solid #e3ead9;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.rd-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #f3f8ee;
+  padding: 12px 20px;
+  border-bottom: 1px solid #e3ead9;
+}
+
+.rd-section-header h2 {
+  margin: 0;
+  font-size: 1.05rem;
+  color: #355a29;
+}
+
+.rd-badge {
+  background: #467235;
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+.rd-section-body {
+  padding: 18px 20px;
+}
+
+.rd-subsection {
+  margin-top: 16px;
+}
+
+.rd-subsection h3 {
+  margin: 0 0 8px;
+  font-size: 0.9rem;
+  color: #467235;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+/* Champs en grille */
+.rd-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 14px 24px;
+}
+
+.rd-field {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.rd-field-label {
+  font-size: 0.75rem;
+  color: #7d8a77;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.rd-field-value {
+  font-size: 0.95rem;
+  color: #1f2a1a;
+  font-weight: 500;
+}
+
+/* Tableaux */
+.rd-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.rd-table th,
+.rd-table td {
+  text-align: left;
+  padding: 10px 12px;
+  border-bottom: 1px solid #eef2ea;
+}
+
+.rd-table th {
+  background: #f3f8ee;
+  color: #355a29;
+  font-weight: 600;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.rd-table tbody tr:hover {
+  background: #fbfdf9;
+}
+
+/* Listes / tags */
+.rd-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.rd-tag {
+  display: inline-block;
+  background: #FFF78D;
+  color: #6b5f00;
+  font-weight: 600;
+  font-size: 0.75rem;
+  padding: 2px 8px;
+  border-radius: 6px;
+  margin-right: 8px;
+}
+
+.rd-muted {
+  color: #8a9484;
+  font-style: italic;
+  margin: 0;
+}

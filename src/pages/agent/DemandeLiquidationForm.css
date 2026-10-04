@@ -1,0 +1,486 @@
+/* =========================================================
+   DemandeLiquidation.css
+   Style clean, fluide, aéré pour le module DemandeLiquidation
+   ========================================================= */
+
+:root {
+  --color-primary: #2563eb;
+  --color-primary-dark: #1d4ed8;
+  --color-primary-light: #eff6ff;
+
+  --color-success: #16a34a;
+  --color-success-bg: #f0fdf4;
+  --color-success-border: #bbf7d0;
+
+  --color-error: #dc2626;
+  --color-error-bg: #fef2f2;
+  --color-error-border: #fecaca;
+
+  --color-text: #1e293b;
+  --color-text-muted: #64748b;
+  --color-border: #e2e8f0;
+  --color-bg: #f8fafc;
+  --color-card: #ffffff;
+
+  --radius: 10px;
+  --radius-sm: 6px;
+  --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.04);
+  --shadow-md: 0 4px 12px rgba(15, 23, 42, 0.06);
+
+  --transition: all 0.18s ease;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.demande-liquidation-page {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 32px 24px 80px;
+  font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+  color: var(--color-text);
+  background: var(--color-bg);
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.page-header {
+  margin-bottom: 28px;
+}
+
+.page-header h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin: 0 0 6px;
+  color: var(--color-text);
+}
+
+.page-header p {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+}
+
+/* =========================================================
+   CARDS COMMUNES
+   ========================================================= */
+
+.verification-card,
+.affilie-card,
+.liquidation-form {
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  padding: 24px;
+  margin-bottom: 24px;
+  transition: var(--transition);
+}
+
+.verification-card h2,
+.affilie-card h2 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin: 0 0 18px;
+}
+
+/* =========================================================
+   VERIFICATION MATRICULE
+   ========================================================= */
+
+.matricule-row {
+  display: flex;
+  align-items: flex-end;
+  gap: 14px;
+}
+
+.matricule-row .form-group {
+  flex: 1;
+}
+
+.btn-verifier {
+  height: 42px;
+  padding: 0 22px;
+  background: var(--color-primary);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: var(--transition);
+  white-space: nowrap;
+}
+
+.btn-verifier:hover {
+  background: var(--color-primary-dark);
+  transform: translateY(-1px);
+}
+
+.btn-verifier:active {
+  transform: translateY(0);
+}
+
+/* =========================================================
+   MESSAGES
+   ========================================================= */
+
+.message {
+  margin-top: 16px;
+  padding: 12px 16px;
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  border: 1px solid transparent;
+  animation: fadeIn 0.2s ease;
+}
+
+.message.success {
+  background: var(--color-success-bg);
+  color: var(--color-success);
+  border-color: var(--color-success-border);
+}
+
+.message.error {
+  background: var(--color-error-bg);
+  color: var(--color-error);
+  border-color: var(--color-error-border);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================================================
+   FICHE AFFILIE
+   ========================================================= */
+
+.card-header {
+  margin-bottom: 16px;
+}
+
+.affilie-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 18px;
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.info-item label {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--color-text-muted);
+  font-weight: 600;
+}
+
+.info-item span {
+  font-size: 0.95rem;
+  color: var(--color-text);
+  font-weight: 500;
+}
+
+.statut-actif {
+  display: inline-block;
+  width: fit-content;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: var(--color-success-bg);
+  color: var(--color-success);
+  font-size: 0.8rem !important;
+  font-weight: 600 !important;
+}
+
+.statut-liquidee {
+  display: inline-block;
+  width: fit-content;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: var(--color-error-bg);
+  color: var(--color-error);
+  font-size: 0.8rem !important;
+  font-weight: 600 !important;
+}
+
+/* =========================================================
+   FORMULAIRE
+   ========================================================= */
+
+.form-section {
+  border-top: 1px solid var(--color-border);
+  padding-top: 24px;
+  margin-top: 24px;
+}
+
+.form-section:first-of-type {
+  border-top: none;
+  padding-top: 0;
+  margin-top: 0;
+}
+
+.section-title h2 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0 0 18px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.section-title h2::before {
+  content: "";
+  width: 4px;
+  height: 18px;
+  background: var(--color-primary);
+  border-radius: 2px;
+  display: inline-block;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group.full-width {
+  grid-column: 1 / -1;
+}
+
+.form-group label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 10px 12px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  color: var(--color-text);
+  background: var(--color-card);
+  transition: var(--transition);
+  font-family: inherit;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px var(--color-primary-light);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.checkbox-group {
+  display: flex;
+  align-items: center;
+}
+
+.checkbox-group label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--color-text);
+  cursor: pointer;
+}
+
+.checkbox-group input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--color-primary);
+  cursor: pointer;
+}
+
+/* =========================================================
+   FAMILLE / CONJOINT / ENFANTS
+   ========================================================= */
+
+.famille-section {
+  background: var(--color-bg);
+  border-radius: var(--radius);
+  padding: 20px;
+  border: 1px dashed var(--color-border);
+}
+
+.conjoint-section,
+.enfants-section {
+  margin-top: 18px;
+}
+
+.conjoint-section h3,
+.enfants-section h3 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin: 0 0 12px;
+}
+
+.info-message {
+  padding: 12px 14px;
+  background: var(--color-primary-light);
+  color: var(--color-primary-dark);
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+}
+
+.enfants-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.btn-add {
+  padding: 8px 16px;
+  background: var(--color-primary-light);
+  color: var(--color-primary-dark);
+  border: 1px solid var(--color-primary);
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn-add:hover {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.empty-enfants {
+  padding: 16px;
+  text-align: center;
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+  background: var(--color-card);
+  border-radius: var(--radius-sm);
+  border: 1px dashed var(--color-border);
+}
+
+.enfant-card {
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 18px;
+  margin-bottom: 14px;
+  box-shadow: var(--shadow-sm);
+}
+
+.enfant-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.enfant-header h4 {
+  margin: 0;
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+.btn-delete {
+  padding: 6px 12px;
+  background: var(--color-error-bg);
+  color: var(--color-error);
+  border: 1px solid var(--color-error-border);
+  border-radius: var(--radius-sm);
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn-delete:hover {
+  background: var(--color-error);
+  color: #fff;
+}
+
+/* =========================================================
+   SUBMIT
+   ========================================================= */
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 28px;
+  padding-top: 20px;
+  border-top: 1px solid var(--color-border);
+}
+
+.btn-submit {
+  padding: 12px 28px;
+  background: var(--color-primary);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition);
+}
+
+.btn-submit:hover {
+  background: var(--color-primary-dark);
+  transform: translateY(-1px);
+}
+
+.btn-submit:active {
+  transform: translateY(0);
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 640px) {
+  .demande-liquidation-page {
+    padding: 20px 16px 60px;
+  }
+
+  .matricule-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn-verifier {
+    width: 100%;
+  }
+
+  .form-actions {
+    justify-content: stretch;
+  }
+
+  .btn-submit {
+    width: 100%;
+  }
+}
