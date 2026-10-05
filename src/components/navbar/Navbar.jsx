@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 import AuthService from "../../services/AuthService";
+import ImageLogo from "../../assets/CIMR.jpg";
 
 export default function Navbar() {
 
@@ -9,7 +10,7 @@ export default function Navbar() {
   return (
     <nav className="navbar">
       <div className="logo">
-        <img src="/src/assets/CIMR.jpg" alt="CIMR" />
+        <img src={ImageLogo} alt="CIMR" />
         <span>CIMR</span>
       </div>
 
