@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-//import "./userDetails.css";
 import api from "../../../services/api";
 
 function UserDetails() {
