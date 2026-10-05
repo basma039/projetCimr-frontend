@@ -1,7 +1,6 @@
 
 import { Outlet } from "react-router-dom";
 import Sidebar from "../../components/sidebar/Sidebar";
-import AuthService from "../../services/AuthService";
 import './AdminDashboard.css';
 
 function AdminDashboard() {

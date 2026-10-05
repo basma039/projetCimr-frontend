@@ -2,7 +2,7 @@
 
 import React from "react";
 import "./Espace.css";
-import { getNom, getPrenom, getRole, getUsername } from "../../services/AuthService";
+import { getNom, getPrenom, getRole} from "../../services/AuthService";
 
 const Espace = () => {
   return (

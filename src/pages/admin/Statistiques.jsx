@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { getStatistiquesAdmin } from "../../services/StatistiquesService";
-import "./statistiques.css";
+import "./Statistiques.css";
 
 const Statistiques = () => {
 
