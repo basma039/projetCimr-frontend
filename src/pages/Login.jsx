@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./Login.css";
+import api from "../services/api";
 
 function Login() {
 
@@ -28,10 +29,7 @@ function Login() {
 
         try {
 
-            const response = await axios.post(
-                "http://localhost:8084/api/auth/login",
-                formData
-            );
+            const response = await api.post("/auth/login", formData);
 
             const data = response.data;
 
