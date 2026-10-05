@@ -1149,7 +1149,7 @@ setTimeout(() => {
                     Retour
                 </button>
 
-               {demande.agent?.username == getUsername() && (
+               {demande.agent?.username == getUsername() && demande.statutDemande === "EN_COURS" && (
                     <button
                         type="button"
                         className="button-primary"
