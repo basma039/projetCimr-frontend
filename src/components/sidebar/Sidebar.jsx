@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import AuthService, { getToken, getRole } from "../../services/AuthService";
 import './Sidebar.css';
+import imageLogo from "../../assets/CIMR.jpg";
 import {
   FaTachometerAlt,
   FaUsers,
@@ -22,7 +23,7 @@ function Sidebar() {
     <aside className="sidebar">
 
     <div className="cont">
-        <img src="\src\assets\CIMR.jpg" alt="logo" className="logoC" width={'80px'} height={''} />
+        <img src={imageLogo} alt="logo" className="logoC" width={'80px'} height={''} />
         <h2>Admin Panel</h2>
         
         <Link to="/admin/dashboard">

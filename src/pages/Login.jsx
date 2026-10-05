@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./Login.css";
 import api from "../services/api";
+import ImageLogo from "../assets/CIMR.jpg";
 
 function Login() {
 
@@ -65,7 +66,7 @@ function Login() {
         <div className="login-page">
 
             <div className="login-card">
-                <img src="/src/assets/CIMR.jpg" alt="CIMR" className="login-logo"/>
+                <img src={ImageLogo} alt="CIMR" className="login-logo"/>
 
 
                 <h2>Connexion</h2>

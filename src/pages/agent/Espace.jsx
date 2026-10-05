@@ -1,6 +1,7 @@
 
 
 import React from "react";
+import imageLogo from "../../assets/CIMR.jpg";
 import "./Espace.css";
 import { getNom, getPrenom, getRole} from "../../services/AuthService";
 
@@ -10,7 +11,7 @@ const Espace = () => {
     <div className="espace-container">
         {getRole() === "AGENT_SAISIE" && (
       <div className="espace-card">
-        <img src="/src/assets/CIMR.jpg" width="150" height="150" alt="CIMR" className="espace-logo" style={{ opacity: 1 }}/>
+        <img src={imageLogo} width="150" height="150" alt="CIMR" className="espace-logo" style={{ opacity: 1 }}/>
         <h1 className="espace-title">Bienvenue M.{getNom()} {getPrenom()}</h1>
         <p className="espace-text">
           Vous êtes connecté en tant qu'<strong>{getRole()}</strong>.
@@ -21,7 +22,7 @@ const Espace = () => {
         )}
         {getRole() === "CONTROLEUR" && (
       <div className="espace-card">
-        <img src="/src/assets/CIMR.jpg" width="150" height="150" alt="CIMR" className="espace-logo" style={{ opacity: 1 }}/>
+        <img src={imageLogo} width="150" height="150" alt="CIMR" className="espace-logo" style={{ opacity: 1 }}/>
         <h1 className="espace-title">Bienvenue <br /> M.{getNom()} {getPrenom()}</h1>
         <p className="espace-text">
           Vous êtes connecté en tant qu'un <strong>{getRole()}</strong>.
@@ -32,7 +33,7 @@ const Espace = () => {
         )}
         {getRole() === "ADMIN" && (
       <div className="espace-card"> 
-        <img src="/src/assets/CIMR.jpg" width="150" height="150" alt="CIMR" className="espace-logo" style={{ opacity: 1 }}/>
+        <img src={imageLogo} width="150" height="150" alt="CIMR" className="espace-logo" style={{ opacity: 1 }}/>
         <h1 className="espace-title">Bienvenue M.{getNom()} {getPrenom()}</h1>
         <p className="espace-text">
           Vous êtes connecté en tant que : <strong>{getRole()}</strong>.

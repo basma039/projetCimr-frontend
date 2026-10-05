@@ -11,6 +11,7 @@ export default function Navbar() {
     <nav className="navbar">
       <div className="logo">
         <img src={ImageLogo} alt="CIMR" />
+        
         <span>CIMR</span>
       </div>
 
