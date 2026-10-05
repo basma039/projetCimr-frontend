@@ -21,7 +21,7 @@ import VoirDemandeLiquidation from './pages/agent/VoirDemandeLiquidation'
 import Espace from './pages/agent/Espace'
 import ControleDemande from './pages/controleur/ControleDemande'
 import Statistiques from './pages/admin/Statistiques'
-import DemandeAValider from './pages/agent/demandeAValider'
+import DemandeAValider from './pages/agent/DemandeAValider'
 
 
 function App() {
